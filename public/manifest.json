@@ -1,0 +1,22 @@
+{
+  "short_name": "LaoScore",
+  "name": "Lao Student Score - ລະບົບຈັດການຄະແນນນັກຮຽນ",
+  "icons": [
+    {
+      "src": "/pwa-192x192.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pwa-512x512.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "lo"
+}

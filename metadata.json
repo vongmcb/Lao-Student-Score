@@ -1,0 +1,6 @@
+{
+  "name": "Lao Student Score",
+  "description": "ລະບົບຈັດການຄະແນນນັກຮຽນ - Responsive Web App + PWA ສຳລັບຄູອາຈານ ແລະ ໂຮງຮຽນ",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

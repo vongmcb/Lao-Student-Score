@@ -1,0 +1,178 @@
+{
+  "rules": "firestore.rules",
+  "collections": {
+    "users": {
+      "description": "User profiles for teachers and administrators",
+      "fields": {
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "teacher"] },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "schools": {
+      "description": "School information used for reports and branding",
+      "fields": {
+        "name": { "type": "string" },
+        "province": { "type": "string" },
+        "district": { "type": "string" },
+        "cluster": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "schoolYears": {
+      "description": "Academic school years like 2025-2026",
+      "fields": {
+        "name": { "type": "string" },
+        "isCurrent": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "classes": {
+      "description": "Classrooms e.g. Grade 7/1",
+      "fields": {
+        "grade": { "type": "string" },
+        "room": { "type": "string" },
+        "name": { "type": "string" },
+        "schoolYearId": { "type": "string" },
+        "homeroomTeacher": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "students": {
+      "description": "Student master profiles according to Lao Student Score database specification",
+      "fields": {
+        "studentNumber": { "type": "number" },
+        "prefix": { "type": "string" },
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "ethnicity": { "type": "string" },
+        "dateOfBirth": { "type": "string" },
+        "birthplace": {
+          "type": "object",
+          "properties": {
+            "village": { "type": "string" },
+            "district": { "type": "string" },
+            "province": { "type": "string" }
+          }
+        },
+        "currentAddress": {
+          "type": "object",
+          "properties": {
+            "village": { "type": "string" },
+            "district": { "type": "string" },
+            "province": { "type": "string" }
+          }
+        },
+        "father": {
+          "type": "object",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "occupation": { "type": "string" }
+          }
+        },
+        "mother": {
+          "type": "object",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "occupation": { "type": "string" }
+          }
+        },
+        "guardianPhone": { "type": "string" },
+        "classId": { "type": "string" },
+        "schoolYearId": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "createdBy": { "type": "string" }
+      }
+    },
+    "subjects": {
+      "description": "Subjects curriculum list",
+      "fields": {
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "order": { "type": "number" },
+        "isActive": { "type": "boolean" },
+        "gradeLevel": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "scorePeriods": {
+      "description": "Periods for grading (09, 10, 11, 12, Exam I, 02, 03, 04, 05, Exam II)",
+      "fields": {
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "semester": { "type": "number" },
+        "isExam": { "type": "boolean" },
+        "order": { "type": "number" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "scores": {
+      "description": "Granular student score per subject and period",
+      "fields": {
+        "studentId": { "type": "string" },
+        "subjectId": { "type": "string" },
+        "classId": { "type": "string" },
+        "schoolYearId": { "type": "string" },
+        "periodId": { "type": "string" },
+        "score": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "createdBy": { "type": "string" }
+      }
+    },
+    "attendance": {
+      "description": "Student attendance statistics",
+      "fields": {
+        "studentId": { "type": "string" },
+        "schoolYearId": { "type": "string" },
+        "semester": { "type": "number" },
+        "absentUnexcused": { "type": "number" },
+        "absentExcused": { "type": "number" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "behavior": {
+      "description": "Student conduct and labor scores",
+      "fields": {
+        "studentId": { "type": "string" },
+        "schoolYearId": { "type": "string" },
+        "semester": { "type": "number" },
+        "conductScore": { "type": "string" },
+        "laborScore": { "type": "string" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "reports": {
+      "description": "Generated or saved report metadata",
+      "fields": {
+        "title": { "type": "string" },
+        "type": { "type": "string" },
+        "classId": { "type": "string" },
+        "schoolYearId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "settings": {
+      "description": "System settings e.g. grading formula weights and scale",
+      "fields": {
+        "passScoreThreshold": { "type": "number" },
+        "maxScore": { "type": "number" },
+        "minScore": { "type": "number" },
+        "formula": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    }
+  }
+}

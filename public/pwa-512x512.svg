@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#1e3a8a"/>
+  <!-- Graduation cap icon and score badge -->
+  <path d="M256 116 L416 196 L256 276 L96 196 Z" fill="#38bdf8"/>
+  <path d="M160 236 V332 C160 370 256 396 256 396 C256 396 352 370 352 332 V236" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round"/>
+  <path d="M416 196 V320" stroke="#f59e0b" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="416" cy="332" r="16" fill="#f59e0b"/>
+  <text x="256" y="350" font-family="'Phetsarath OT', 'Noto Sans Lao', sans-serif" font-weight="bold" font-size="76" fill="#ffffff" text-anchor="middle">A+</text>
+</svg>
